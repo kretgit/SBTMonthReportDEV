@@ -104,7 +104,8 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
                     if (j != i && stringBuffArr[j].equals(stringBuffArr[i])) {
                         countDoubles++;
-                        System.out.println(countDoubles +" "+ stringBuffArr[i]);
+                        //stringBuffArr[i] = "Дубль" + countDoubles + " " + stringBuffArr[i];
+                        System.out.println("Double" + countDoubles +" "+ stringBuffArr[i]); //раскоментить строку для отображения только дублей
                         break;
                     }
 
@@ -113,7 +114,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
             }
         }
 
-        //System.out.println(count + ". " + stringBuffArr[i]);
+        //System.out.println(stringBuffArr[i]);
     }
 
     System.out.println("дублей найдено: " + countDoubles);
@@ -126,5 +127,16 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 /*
 CRM-79722	(PM00036576, IM55808744)
 Анохина, Жердева, Марков - должен остаться у Жердевой
+
+
+Веснин Олег Николаевич
+Управление командой поддержки СБТ
+
+Денисов Михаил Александрович
+Управление командой поддержки СБТ в части разработки, организация выпуска и учета исправлений
+
+Кретов Алексей Алексеевич
+Управление командой поддержки, операционное управления функциями по разбору обращений
+
 */
 
