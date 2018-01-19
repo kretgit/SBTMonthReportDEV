@@ -12,8 +12,6 @@ public class MainDevParsTxt {
 
     static String textFromTXTFile = "";
     static int empCount = 0;
-    static int totalCount = 0;
-
     static String stringBuff = "";
 
     public static void main (String[]xxx) {
@@ -42,6 +40,10 @@ public class MainDevParsTxt {
 //разбиваем строку в массив по символу начала новой строки
 String[]buffArrFromTXT = textFromTXTFile.split("\n");
 
+        int indexTab = 0;
+        int indexRegex2 = 0;
+        int indexRegex3 = 0;
+
 for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
     if (buffArrFromTXT[i].contains(regexBegin)) {
@@ -50,11 +52,11 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 //обработка остатка строки от "CRM-"
         if (buffArrFromTXT[i].contains(regexCRM)) {
 
-            int indexTab = buffArrFromTXT[i].indexOf(regexTab);
+            indexTab = buffArrFromTXT[i].indexOf(regexTab);
 
                 if (buffArrFromTXT[i].contains(regex2)) {
-                    int indexRegex2 = buffArrFromTXT[i].indexOf(regex2);
-                    int indexRegex3 = buffArrFromTXT[i].indexOf(regex3);
+                    indexRegex2 = buffArrFromTXT[i].indexOf(regex2);
+                    indexRegex3 = buffArrFromTXT[i].indexOf(regex3);
                     buffArrFromTXT[i] = buffArrFromTXT[i].replaceAll((buffArrFromTXT[i].substring(indexRegex2, indexRegex3 + regex3.length())), "");
                 }
 
@@ -72,13 +74,9 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
         }
 
 //получаем количество разработчиков
-            if (buffArrFromTXT[i].contains(regexCRM)) {
+            if (buffArrFromTXT[i].contains(regexCRM) || buffArrFromTXT[i].length()==0 /*|| buffArrFromTXT[i].contains("Double")*/) {
                 continue;
-            } else if (buffArrFromTXT[i].length()<1) {
-                continue;
-            }    else {
-                    empCount++;
-            }
+            } else { empCount++; }
 
     }
 }
@@ -93,7 +91,6 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
 
 //ищем дубли в массиве - типа одинаковые задачи
-    int count = 0;
     int countDoubles = 0;
 
     for (int i = 0; i < stringBuffArr.length; i++) {
@@ -104,9 +101,9 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
                     if (j != i && stringBuffArr[j].equals(stringBuffArr[i])) {
                         countDoubles++;
-                        //stringBuffArr[i] = "Дубль" + countDoubles + " " + stringBuffArr[i];
-                        System.out.println("Double" + countDoubles +" "+ stringBuffArr[i]); //раскоментить строку для отображения только дублей
-                        break;
+                        stringBuffArr[i] = "Double" + countDoubles + " " + stringBuffArr[i];
+                        //System.out.println("Double" + countDoubles + " " + stringBuffArr[i]); //раскоментить строку для отображения только дублей
+                        //break;
                     }
 
 
@@ -114,10 +111,12 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
             }
         }
 
-        //System.out.println(stringBuffArr[i]);
+        System.out.println(stringBuffArr[i]);
     }
 
-    System.out.println("дублей найдено: " + countDoubles);
+    //for (String i: stringBuffArr) {     System.out.println(i);    }
+
+    System.out.println("повторяющихся значений: " + countDoubles);
 
     } //end of method
 
