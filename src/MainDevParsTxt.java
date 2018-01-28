@@ -22,7 +22,7 @@ public class MainDevParsTxt {
         String regex2 = "ѕроблем:";
         String regex3 = "ќбновить";
 
-//из тексового файла все переводим в тектовую переменную строку
+//из тексового файла все переводим в текстовую переменную строку
         try {
             FileReader fr = new FileReader(nameOfTXTFile);
             int c;
@@ -61,7 +61,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
                 }
 
             buffArrFromTXT[i] = buffArrFromTXT[i].substring(0, indexTab) + regexTab + "(" + buffArrFromTXT[i].substring(indexTab + regexTab.length()) + ")";
-
+            //System.out.println(buffArrFromTXT[i]);
         }
 //убираем пустые дефекты без прив€зки к запросам из —ћ и корректируем некоторые неровности
         if (buffArrFromTXT[i].contains("()") ) {
@@ -81,7 +81,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
     }
 }
 
-        System.out.println(empCount);
+        //System.out.println(empCount);
         //System.out.println(stringBuff);
 
 //обратно строку в массив
@@ -92,31 +92,68 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
 //ищем дубли в массиве - типа одинаковые задачи
     int countDoubles = 0;
+    String strDoubles = "";
+
 
     for (int i = 0; i < stringBuffArr.length; i++) {
         if (stringBuffArr[i].length() != 0) {
+
             for (int j = 0; j < stringBuffArr.length; j++) {
                 if (stringBuffArr[j].length() != 0) {
 
 
                     if (j != i && stringBuffArr[j].equals(stringBuffArr[i])) {
-                        countDoubles++;
-                        stringBuffArr[i] = "Double" + countDoubles + " " + stringBuffArr[i];
+
+                        //stringBuffArr[i] = "Double" + countDoubles + " " + stringBuffArr[i];
+                    //чтоб строка с дубл€ми содержала только уникальные значени€
+                        if (strDoubles.contains(stringBuffArr[i])) {
+                            continue;
+                        } else {
+                            countDoubles++;
+                            strDoubles += stringBuffArr[i] + "\n";
+                        }
+
                         //System.out.println("Double" + countDoubles + " " + stringBuffArr[i]); //раскоментить строку дл€ отображени€ только дублей
-                        //break;
+                        //continue;
                     }
-
-
                 }
             }
         }
 
-        System.out.println(stringBuffArr[i]);
+        //System.out.println(stringBuffArr[i]);
     }
 
-    //for (String i: stringBuffArr) {     System.out.println(i);    }
+    for (String i: stringBuffArr) {     System.out.println(i);    }
 
-    System.out.println("повтор€ющихс€ значений: " + countDoubles);
+    System.out.println("\nповтор€ющихс€ значений: " + countDoubles);
+    System.out.println(strDoubles);
+
+
+//работаем с дубл€ми - оставл€ем дубли тем, у кого тикетов меньше
+    String[]arrDoubles = strDoubles.split("\n");
+
+    for (int i = 0; i < arrDoubles.length; i++) {
+
+        for (int j = 0; j < stringBuffArr.length; j++) {
+
+
+                if (arrDoubles[i].equals(stringBuffArr[j])) {
+
+                    while (stringBuffArr[i].length() != 0) {
+
+                        int count = 0;
+                        count++;
+
+                    }
+                }
+
+
+
+        }
+
+    }
+
+
 
     } //end of method
 
