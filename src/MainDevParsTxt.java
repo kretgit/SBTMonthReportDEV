@@ -1,4 +1,8 @@
-/*пример годного файла лежит в корне программы*/
+/*РїСЂРёРјРµСЂ РіРѕРґРЅРѕРіРѕ С„Р°Р№Р»Р° Р»РµР¶РёС‚ РІ РєРѕСЂРЅРµ РїСЂРѕРіСЂР°РјРјС‹*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 
 import java.io.FileWriter;
 import java.io.FileReader;
@@ -7,37 +11,56 @@ public class MainDevParsTxt {
 
 
     static String nameOfTXTFile =
-                        "//Users//mackret//Downloads/12_dev.txt";
-            //"C://Users//SBT-Kretov-AA//Downloads/12_dev.txt";
+            //"//Users//mackret//Downloads/12_dev.txt";
+            "C://Users//SBT-Kretov-AA//Downloads/12_dev.txt";
 
-    static String textFromTXTFile = "";
-    static int empCount = 0;
-    static String stringBuff = "";
+    static String strDoubles = "";
+    static String[]stringBuffArr;
 
     public static void main (String[]xxx) {
 
-        String regexBegin = "Цуп/Тск/Sm";
+        String textFromTXTFile = "";
+        int empCount = 0;
+        String stringBuff = "";
+
+        String regexBegin = "Р¦СѓРї/РўСЃРє/Sm";
         String regexCRM = "CRM-";
         String regexTab = "\t";
-        String regex2 = "Проблем:";
-        String regex3 = "Обновить";
+        String regex2 = "РџСЂРѕР±Р»РµРј:";
+        String regex3 = "РћР±РЅРѕРІРёС‚СЊ";
 
-//из тексового файла все переводим в текстовую переменную строку
+//РёР· С‚РµРєСЃРѕРІРѕРіРѕ С„Р°Р№Р»Р° РІСЃРµ РїРµСЂРµРІРѕРґРёРј РІ С‚РµРєСЃС‚РѕРІСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+//        try {
+//            FileReader fr = new FileReader(nameOfTXTFile);
+//            int c;
+//            while ((c = fr.read()) != -1) {
+//                textFromTXTFile += ((char) c);
+//            }
+//
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        }
+
         try {
-            FileReader fr = new FileReader(nameOfTXTFile);
-            int c;
-            while ((c = fr.read()) != -1) {
-                textFromTXTFile += ((char) c);
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(nameOfTXTFile),"windows-1251")); //UTF8
+
+            String c;
+            while ((c = br.readLine() ) != null) {
+
+                textFromTXTFile += c + "\n";
             }
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
+
         //System.out.println(textFromTXTFile);
 
 
-//разбиваем строку в массив по символу начала новой строки
+//СЂР°Р·Р±РёРІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ РїРѕ СЃРёРјРІРѕР»Сѓ РЅР°С‡Р°Р»Р° РЅРѕРІРѕР№ СЃС‚СЂРѕРєРё
 String[]buffArrFromTXT = textFromTXTFile.split("\n");
 
         int indexTab = 0;
@@ -49,7 +72,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
     if (buffArrFromTXT[i].contains(regexBegin)) {
         continue;
     } else {
-//обработка остатка строки от "CRM-"
+//РѕР±СЂР°Р±РѕС‚РєР° РѕСЃС‚Р°С‚РєР° СЃС‚СЂРѕРєРё РѕС‚ "CRM-"
         if (buffArrFromTXT[i].contains(regexCRM)) {
 
             indexTab = buffArrFromTXT[i].indexOf(regexTab);
@@ -63,7 +86,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
             buffArrFromTXT[i] = buffArrFromTXT[i].substring(0, indexTab) + regexTab + "(" + buffArrFromTXT[i].substring(indexTab + regexTab.length()) + ")";
             //System.out.println(buffArrFromTXT[i]);
         }
-//убираем пустые дефекты без привязки к запросам из СМ и корректируем некоторые неровности
+//СѓР±РёСЂР°РµРј РїСѓСЃС‚С‹Рµ РґРµС„РµРєС‚С‹ Р±РµР· РїСЂРёРІСЏР·РєРё Рє Р·Р°РїСЂРѕСЃР°Рј РёР· РЎРњ Рё РєРѕСЂСЂРµРєС‚РёСЂСѓРµРј РЅРµРєРѕС‚РѕСЂС‹Рµ РЅРµСЂРѕРІРЅРѕСЃС‚Рё
         if (buffArrFromTXT[i].contains("()") ) {
             continue;
         } else {
@@ -73,7 +96,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
             stringBuff+=buffArrFromTXT[i] + "\n";
         }
 
-//получаем количество разработчиков
+//РїРѕР»СѓС‡Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ
             if (buffArrFromTXT[i].contains(regexCRM) || buffArrFromTXT[i].length()==0 /*|| buffArrFromTXT[i].contains("Double")*/) {
                 continue;
             } else { empCount++; }
@@ -84,16 +107,14 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
         //System.out.println(empCount);
         //System.out.println(stringBuff);
 
-//обратно строку в массив
+//РѕР±СЂР°С‚РЅРѕ СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 
-    String[]stringBuffArr = stringBuff.split("\n");
+    stringBuffArr = stringBuff.split("\n");
 
 
 
-//ищем дубли в массиве - типа одинаковые задачи
+//РёС‰РµРј РґСѓР±Р»Рё РІ РјР°СЃСЃРёРІРµ - С‚РёРїР° РѕРґРёРЅР°РєРѕРІС‹Рµ Р·Р°РґР°С‡Рё
     int countDoubles = 0;
-    String strDoubles = "";
-
 
     for (int i = 0; i < stringBuffArr.length; i++) {
         if (stringBuffArr[i].length() != 0) {
@@ -105,7 +126,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
                     if (j != i && stringBuffArr[j].equals(stringBuffArr[i])) {
 
                         //stringBuffArr[i] = "Double" + countDoubles + " " + stringBuffArr[i];
-                    //чтоб строка с дублями содержала только уникальные значения
+                    //С‡С‚РѕР± СЃС‚СЂРѕРєР° СЃ РґСѓР±Р»СЏРјРё СЃРѕРґРµСЂР¶Р°Р»Р° С‚РѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
                         if (strDoubles.contains(stringBuffArr[i])) {
                             continue;
                         } else {
@@ -113,7 +134,7 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
                             strDoubles += stringBuffArr[i] + "\n";
                         }
 
-                        //System.out.println("Double" + countDoubles + " " + stringBuffArr[i]); //раскоментить строку для отображения только дублей
+                        //System.out.println("Double" + countDoubles + " " + stringBuffArr[i]); //СЂР°СЃРєРѕРјРµРЅС‚РёС‚СЊ СЃС‚СЂРѕРєСѓ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ С‚РѕР»СЊРєРѕ РґСѓР±Р»РµР№
                         //continue;
                     }
                 }
@@ -125,11 +146,11 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
     for (String i: stringBuffArr) {     System.out.println(i);    }
 
-    System.out.println("\nповторяющихся значений: " + countDoubles);
+    System.out.println("\nРїРѕРІС‚РѕСЂСЏСЋС‰РёС…СЃСЏ Р·РЅР°С‡РµРЅРёР№: " + countDoubles);
     System.out.println(strDoubles);
 
 
-//работаем с дублями - оставляем дубли тем, у кого тикетов меньше
+//СЂР°Р±РѕС‚Р°РµРј СЃ РґСѓР±Р»СЏРјРё - РѕСЃС‚Р°РІР»СЏРµРј РґСѓР±Р»Рё С‚РµРј, Сѓ РєРѕРіРѕ С‚РёРєРµС‚РѕРІ РјРµРЅСЊС€Рµ
     String[]arrDoubles = strDoubles.split("\n");
 
     for (int i = 0; i < arrDoubles.length; i++) {
@@ -141,8 +162,8 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
                     while (stringBuffArr[i].length() != 0) {
 
-                        int count = 0;
-                        count++;
+                        //int count = 0;
+                        //count++;
 
                     }
                 }
@@ -162,17 +183,17 @@ for (int i = 0; i < buffArrFromTXT.length; i ++) {
 
 /*
 CRM-79722	(PM00036576, IM55808744)
-Анохина, Жердева, Марков - должен остаться у Жердевой
+РђРЅРѕС…РёРЅР°, Р–РµСЂРґРµРІР°, РњР°СЂРєРѕРІ - РґРѕР»Р¶РµРЅ РѕСЃС‚Р°С‚СЊСЃСЏ Сѓ Р–РµСЂРґРµРІРѕР№
 
 
-Веснин Олег Николаевич
-Управление командой поддержки СБТ
+Р’РµСЃРЅРёРЅ РћР»РµРі РќРёРєРѕР»Р°РµРІРёС‡
+РЈРїСЂР°РІР»РµРЅРёРµ РєРѕРјР°РЅРґРѕР№ РїРѕРґРґРµСЂР¶РєРё РЎР‘Рў
 
-Денисов Михаил Александрович
-Управление командой поддержки СБТ в части разработки, организация выпуска и учета исправлений
+Р”РµРЅРёСЃРѕРІ РњРёС…Р°РёР» РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡
+РЈРїСЂР°РІР»РµРЅРёРµ РєРѕРјР°РЅРґРѕР№ РїРѕРґРґРµСЂР¶РєРё РЎР‘Рў РІ С‡Р°СЃС‚Рё СЂР°Р·СЂР°Р±РѕС‚РєРё, РѕСЂРіР°РЅРёР·Р°С†РёСЏ РІС‹РїСѓСЃРєР° Рё СѓС‡РµС‚Р° РёСЃРїСЂР°РІР»РµРЅРёР№
 
-Кретов Алексей Алексеевич
-Управление командой поддержки, операционное управления функциями по разбору обращений
+РљСЂРµС‚РѕРІ РђР»РµРєСЃРµР№ РђР»РµРєСЃРµРµРІРёС‡
+РЈРїСЂР°РІР»РµРЅРёРµ РєРѕРјР°РЅРґРѕР№ РїРѕРґРґРµСЂР¶РєРё, РѕРїРµСЂР°С†РёРѕРЅРЅРѕРµ СѓРїСЂР°РІР»РµРЅРёСЏ С„СѓРЅРєС†РёСЏРјРё РїРѕ СЂР°Р·Р±РѕСЂСѓ РѕР±СЂР°С‰РµРЅРёР№
 
 */
 
