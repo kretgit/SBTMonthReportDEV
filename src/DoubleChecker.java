@@ -1,226 +1,13 @@
 public class DoubleChecker {
 
-    static String requestAndResposible =
-            "¿ÌÓıËÌ‡ ≈‚„ÂÌËˇ (SBT-Anohina-ES):\n" +
-                    "CRM-79722 (PM00036576, IM55808744)\n" +
-                    "CRM-79527 (PM00036575, IM55205708, CRM-75067)\n" +
-                    "CRM-79520 («ÕŒ33386645)\n" +
-                    "CRM-79433 («ÕŒ33232755)\n" +
-                    "CRM-79252 (PM00036510, «ÕŒ31557071)\n" +
-                    "CRM-79207 (PM00036580, «ÕŒ30236960)\n" +
-                    "CRM-79176 (PM00036536, IM52624441)\n" +
-                    "CRM-79117 («ÕŒ32453670)\n" +
-                    "CRM-79047 (IM55238281, IM55122218, IM55170722, IM55379408, IM55449472, IM55448551)\n" +
-                    "CRM-78841 (IM54635111)\n" +
-                    "CRM-78784 (PM00036328, IM53648148)\n" +
-                    "CRM-78661 («ÕŒ31964516, «ÕŒ32713657, «ÕŒ32222106)\n" +
-                    "CRM-78648 (PM00036210, IM53135384, IM54734664, IM55181549)\n" +
-                    "CRM-78523 («ÕŒ31637760)\n" +
-                    "CRM-78247 («ÕŒ30245124)\n" +
-                    "CRM-77272 (IM51840805, IM55253533)\n" +
-                    "\n" +
-                    "¡‡ÊÂÌÓ‚ ŒÎÂ„ (SBT-Bazhenov-OE):\n" +
-                    "CRM-79663 (IM55851403)\n" +
-                    "CRM-79552 («ÕŒ33215192)\n" +
-                    "CRM-79531 (IM55631254)\n" +
-                    "CRM-79024 (IM55235183)\n" +
-                    "CRM-78722 (IM54856908)\n" +
-                    "CRM-78703 (IM54802876)\n" +
-                    "CRM-78701 (IM54828932)\n" +
-                    "CRM-78699 (PM00036213, «ÕŒ31930454)\n" +
-                    "CRM-78665 (IM54752512)\n" +
-                    "CRM-78657 (IM54747891)\n" +
-                    "CRM-78649 (IM54741231)\n" +
-                    "CRM-78605 (IM54660736)\n" +
-                    "CRM-78583 (IM54650407)\n" +
-                    "CRM-78568 (IM54594154)\n" +
-                    "CRM-78232 (IM53764992)\n" +
-                    "CRM-78163 (IM53853789, IM53856810)\n" +
-                    "\n" +
-                    "¡ÓÌ‰‡˜ÛÍ ¿ÌÚÓÌ (SBT-Bondarchuk-AS):\n" +
-                    "CRM-79754 (PM00036588, IM55234369)\n" +
-                    "CRM-79704 (IM55871991)\n" +
-                    "CRM-79642 («ÕŒ33337482)\n" +
-                    "CRM-79586 (IM55629452)\n" +
-                    "CRM-79426 («ÕŒ33303941)\n" +
-                    "CRM-79103 («ÕŒ32544542)\n" +
-                    "CRM-79088 (IM55269293)\n" +
-                    "CRM-79008 (IM55235092)\n" +
-                    "CRM-78871 («ÕŒ32361971)\n" +
-                    "CRM-78832 (PM00036331, IM54818192, IM55023748, IM54998024)\n" +
-                    "CRM-78820 (IM55021923)\n" +
-                    "CRM-78779 (PM00036332, IM54297840)\n" +
-                    "CRM-78629 («ÕŒ32106574)\n" +
-                    "CRM-78602 (IM54652335, «ÕŒ32033593)\n" +
-                    "CRM-78553 («ÕŒ31618344)\n" +
-                    "CRM-78468 (IM54165684, «ÕŒ31966200)\n" +
-                    "CRM-78111 («ÕŒ30643423)\n" +
-                    "CRM-78004 («ÕŒ30028521, «ÕŒ30321438)\n" +
-                    "CRM-77896 (PM00035822, IM53209362)\n" +
-                    "CRM-77147 (PM00035384 «ÕŒ26631745, «ÕŒ26812047)\n" +
-                    "\n" +
-                    "ƒÂÌËÒÓ‚ ÃËı‡ËÎ (SBT-Denisov-MA):\n" +
-                    "CRM-79525 (PM00036568, IM52463094)\n" +
-                    "CRM-79065 (PM00036535, IM54920606)\n" +
-                    "CRM-79047 (IM55238281, IM55122218, IM55170722, IM55379408, IM55449472, IM55448551)\n" +
-                    "CRM-79011 (IM55235173)\n" +
-                    "CRM-78938 («ÕŒ31843376)\n" +
-                    "CRM-78792 (PM00036254, IM55020317)\n" +
-                    "CRM-78684 («ÕŒ32217484; IM54777246)\n" +
-                    "CRM-78652 (IM54716734, IM54712230)\n" +
-                    "CRM-78625 («ÕŒ32110823)\n" +
-                    "CRM-78500 («ÕŒ31476752)\n" +
-                    "CRM-78345 («ÕŒ31389342)\n" +
-                    "CRM-77747 («ÕŒ29770344)\n" +
-                    "CRM-77720 («ÕŒ29676361)\n" +
-                    "CRM-77697 («ÕŒ29685093)\n" +
-                    "CRM-77355 (PM00035583, «ÕŒ26467855)\n" +
-                    "\n" +
-                    "∆Â‰Â‚‡ »ËÌ‡ (SBT-Zherdeva-IN):\n" +
-                    "CRM-79722 (PM00036576, IM55808744)\n" +
-                    "CRM-79523 (PM00036479, «ÕŒ30917067)\n" +
-                    "CRM-79349 (PM00036578, IM47321940, IM47566053, IM47316133, «ÕŒ22947720, «ÕŒ23222095, IM48022538, «ÕŒ23010304, «ÕŒ23037726, IM48172974; «ÕŒ24383719, IM54852917)\n" +
-                    "CRM-78715 (IM54794801, IM54674352, «ÕŒ32425771)\n" +
-                    "\n" +
-                    "Ã‡ÍÓ‚ —ÂÏÂÌ (SBT-Markov-SA):\n" +
-                    "CRM-79722 (PM00036576, IM55808744)\n" +
-                    "CRM-78748 (IM54894182)\n" +
-                    "CRM-78613 (IM54519861)\n" +
-                    "CRM-78246 («ÕŒ30917067)\n" +
-                    "CRM-77912 («ÕŒ29901383)\n" +
-                    "CRM-76642 (IM51175114)\n" +
-                    "\n" +
-                    "ŒÈÍËÌ ƒÏËÚËÈ (Oykin-DV):\n" +
-                    "CRM-79709 (IM55701086, IM56281068)\n" +
-                    "CRM-79470 (PM00036581, «ÕŒ33512180)\n" +
-                    "CRM-79451 (PM00036566, «ÕŒ26984306, «ÕŒ27121565, «ÕŒ29623516)\n" +
-                    "CRM-79424 (IM55544784)\n" +
-                    "CRM-79423 (IM55546141)\n" +
-                    "CRM-79097 (IM55289012)\n" +
-                    "CRM-79048 (PM00036355, IM55235058)\n" +
-                    "CRM-78976 («ÕŒ32956841)\n" +
-                    "CRM-78827 (PM00036326, «ÕŒ31045386)\n" +
-                    "CRM-78770 («ÕŒ31896404)\n" +
-                    "CRM-78697 («ÕŒ30917984, «Õ–03225158)\n" +
-                    "CRM-78497 («ÕŒ31426396)\n" +
-                    "CRM-74581 (IM48540001, IM48521928, «ÕŒ23778409, «ÕŒ24024024, IM49287014, IM50407070, IM51077127, IM52985248, IM53315238, IM53356114)\n" +
-                    "\n" +
-                    "œÓÚ‡ÔÓ‚ ÕËÍËÚ‡ (SBT-Potapov-NV):\n" +
-                    "CRM-79717 (CRM-79578)\n" +
-                    "CRM-79578 («ÕŒ33728233, IM55675468)\n" +
-                    "CRM-79445 (IM55561325)\n" +
-                    "CRM-79431 (PM00036567, «ÕŒ32269874)\n" +
-                    "CRM-79255 («ÕŒ33113294)\n" +
-                    "CRM-79100 (IM55282215)\n" +
-                    "CRM-79023 (PM00036353, IM53982538)\n" +
-                    "CRM-78981 («ÕŒ32587116)\n" +
-                    "CRM-78857 (PM00036329, «ÕŒ31896404)\n" +
-                    "CRM-78827 (PM00036326, «ÕŒ31045386)\n" +
-                    "CRM-78798 («ÕŒ32343319)\n" +
-                    "CRM-78742 (IM54824817)\n" +
-                    "CRM-78702 («ÕŒ32218501)\n" +
-                    "CRM-78624 («ÕŒ31959690)\n" +
-                    "CRM-78507 (IM53129348)\n" +
-                    "CRM-78435 («ÕŒ31162764)\n" +
-                    "CRM-78198 («ÕŒ30794522, «ÕŒ30790959)\n" +
-                    "CRM-77920 («ÕŒ29321101; «ÕŒ29808324)\n" +
-                    "CRM-77610 (PM00035579, «ÕŒ28438859)\n" +
-                    "\n" +
-                    "—‡·ËÓ‚ Ã‡ÒÂÎ¸ (SBT-Sabirov-MS):\n" +
-                    "CRM-79112 (IM55377044)\n" +
-                    "CRM-78853 («ÕŒ32633227, «ÕŒ32159170)\n" +
-                    "CRM-78823 (PM00036327, «ÕŒ32633227, «ÕŒ32159170)\n" +
-                    "CRM-78668 (PM00036228, IM54316932)\n" +
-                    "\n" +
-                    "—Â„Û¯ÂÌÍÓ‚ ¿ÎÂÍÒÂÈ (SBT-Sergushenkov-AYU):\n" +
-                    "CRM-79640 («ÕŒ33827007)\n" +
-                    "CRM-79477 («ÕŒ33172757)\n" +
-                    "CRM-79436 («ÕŒ33379784)\n" +
-                    "CRM-79134 (PM00036582, «ÕŒ32962233)\n" +
-                    "CRM-79086 (IM55253651)\n" +
-                    "CRM-79079 (IM55302219)\n" +
-                    "CRM-78937 (IM55115018)\n" +
-                    "CRM-78851 (IM54862184)\n" +
-                    "CRM-78815 (IM53752833)\n" +
-                    "CRM-78749 («ÕŒ30915853)\n" +
-                    "CRM-78630 (PM00036229, «ÕŒ31701511)\n" +
-                    "CRM-77903 (IM53097936)\n" +
-                    "CRM-77737 (PM00035823, «ÕŒ26663848)\n" +
-                    "CRM-77731 (PM00035792, «ÕŒ29714982)\n" +
-                    "CRM-72000 (PM00033243, IM44668238, IM44662999)\n" +
-                    "\n" +
-                    "—ÚÂÎËÍÓ‚ ¬ËÍÚÓ (SBT-Sterlikov1-VV):\n" +
-                    "CRM-79679 (IM55788885, IM55851680, IM55912173, IM55971416)\n" +
-                    "CRM-79622 (PM00036577, IM53923944)\n" +
-                    "CRM-79299 (IM55512928)\n" +
-                    "CRM-78762 (IM54903923, IM54932394, IM54989926, IM54964453, IM54964297, IM54933772, IM55053755, IM55358732, IM55424199, IM55607785, IM56030590)\n" +
-                    "CRM-78709 («ÕŒ32325625)\n" +
-                    "CRM-78655 («ÕŒ32159843)\n" +
-                    "CRM-78638 (PM00036222, IM54669211, «ÕŒ32011079,IM54688592)\n" +
-                    "CRM-78600 (IM54641765, IM54628699, «ÕŒ31928220, «ÕŒ31939464, «ÕŒ31950149, «ÕŒ31950758)\n" +
-                    "CRM-78555 (IM52711889)\n" +
-                    "CRM-77998 (PM00035827, «ÕŒ25832895;«ÕŒ20749268,«ÕŒ21912858;«ÕŒ22399336, «ÕŒ22915352; «ÕŒ23077269; «ÕŒ23172784, «ÕŒ24392694, «ÕŒ24787515, «ÕŒ24705814, «ÕŒ24881406, «ÕŒ25758366, «ÕŒ25833429; «ÕŒ25812768, «ÕŒ25624827; «ÕŒ26446951, «ÕŒ27070577; «ÕŒ27140648, «ÕŒ28223749)\n" +
-                    "CRM-77939 («ÕŒ29657523)\n" +
-                    "CRM-77598 («ÕŒ29179466)\n" +
-                    "CRM-77355 (PM00035583, «ÕŒ26467855)\n" +
-                    "CRM-76330 («ÕŒ26550708)\n" +
-                    "CRM-76237 («ÕŒ26468215)\n" +
-                    "CRM-76213 («ÕŒ26468345)\n" +
-                    "CRM-75042 (IM49257560)\n" +
-                    "\n" +
-                    "“‡ÌËÌ ¬‡ÎÂËÈ (SBT-Tranin-VA):\n" +
-                    "CRM-79743 (PM00036587, IM55811782)\n" +
-                    "CRM-79251 (PM00036579, «ÕŒ32864366)\n" +
-                    "CRM-79178 (PM00036538, IM55000203, IM55375866)\n" +
-                    "CRM-79045 («ÕŒ32948217)\n" +
-                    "CRM-78916 (IM55102950; IM55140871; IM55191645)\n" +
-                    "CRM-78824 («ÕŒ32300249, IM55008902)\n" +
-                    "CRM-78738 (PM00036221, «ÕŒ28249920)\n" +
-                    "CRM-78688 (PM00036211, IM54668412, «ÕŒ32304965, «ÕŒ32411095, IM55062080, IM55125373, «ÕŒ32750389, IM55177262)\n" +
-                    "CRM-78678 (IM54668412)\n" +
-                    "CRM-78609 («ÕŒ32015828)\n" +
-                    "CRM-78467 (IM53533954)\n" +
-                    "CRM-77405 («ÕŒ29040038,«ÕŒ29040641,IM52372665,IM52518752,«ÕŒ29101147,«ÕŒ29357119,IM52878241,IM52806538,IM52829641,IM52874544,«ÕŒ29517364,«ÕŒ29373565,IM52886845,IM53013188,«ÕŒ29977136,IM53348785,«ÕŒ30217879,IM53506952,IM53507510,«ÕŒ30437283,IM53576683,IM53611338)\n" +
-                    "CRM-76350 (PM00034932, «ÕŒ25600046)\n" +
-                    "CRM-75672 («ÕŒ25600046)\n" +
-                    "\n" +
-                    "ÿÂÎÍÓ‚ÒÍËÈ —ÚÂÔ‡Ì (SBT-Shelkovskiy-SP):\n" +
-                    "CRM-78791 («ÕŒ32196053, «ÕŒ33377155)\n" +
-                    "CRM-78662 (IM54756347)\n" +
-                    "CRM-78523 («ÕŒ31637760)\n" +
-                    "CRM-78482 (IM54166661)\n" +
-                    "CRM-78078 («ÕŒ30547126)\n" +
-                    "CRM-78073 (IM53567789)\n" +
-                    "CRM-77447 («ÕŒ28984321, IM51884772)\n" +
-                    "CRM-77082 («ÕŒ28337783)\n" +
-                    "CRM-73055 («ÕŒ21319771)\n" +
-                    "\n" +
-                    "ÿÛ¯‡ËÌ ¿Ì‰ÂÈ (SBT-Shusharin-AV):\n" +
-                    "CRM-79640 («ÕŒ33827007)\n" +
-                    "CRM-78673 («ÕŒ32133922)\n" +
-                    "CRM-78573 («ÕŒ31741674)\n" +
-                    "CRM-78512 («ÕŒ31797461)\n" +
-                    "CRM-78459 («ÕŒ31569463)\n" +
-                    "CRM-78345 («ÕŒ31389342)\n" +
-                    "CRM-78166 («ÕŒ30666860)";
 
-    static String dobles =
-                    "CRM-79722 (PM00036576, IM55808744)\n" +
-                    "CRM-79047 (IM55238281, IM55122218, IM55170722, IM55379408, IM55449472, IM55448551)\n" +
-                    "CRM-78523 («ÕŒ31637760)\n" +
-                    "CRM-78345 («ÕŒ31389342)\n" +
-                    "CRM-77355 (PM00035583, «ÕŒ26467855)\n" +
-                    "CRM-78827 (PM00036326, «ÕŒ31045386)\n" +
-                    "CRM-79640 («ÕŒ33827007)";
+    static String[]stringBuffArr = DevParsTxt.stringBuffArr.clone();
+    static String[]arrDoubles = DevParsTxt.strDoubles.split("\n");
+    static String rowForDoubles = "";
 
-    static String[]stringBuffArr = requestAndResposible.split("\n");
-    static String[]arrDoubles = dobles.split("\n");
+    public static void doubleCheck () {
 
-
-
-    public static void main(String[] args) {
-
-//ÔÓ‰Ò˜ËÚ˚‚‡ÂÚ ÍÓÎË˜ÂÒÚ‚Ó Á‡ˇ‚ÓÍ Û Í‡Ê‰Ó„Ó ‡Á‡·‡
+//–ø–æ–¥—Å—á–∏—Ç—ã–≤–∞–µ—Ç –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∑–∞—è–≤–æ–∫ —É –∫–∞–∂–¥–æ–≥–æ —Ä–∞–∑—Ä–∞–±–∞
         int countBugs = 0;
 
         for (int i = stringBuffArr.length-1; i >= 0; i--) {
@@ -233,40 +20,94 @@ public class DoubleChecker {
                 continue;
             }
             else {
-                    stringBuffArr[i] = stringBuffArr[i] + countBugs;
-                    countBugs = 0;
+                stringBuffArr[i] = stringBuffArr[i] + countBugs;
+                countBugs = 0;
+                if (stringBuffArr[i].contains("SBT-Denisov-MA")) {
+                    stringBuffArr[i]+="000";
                 }
 
+            }
 
             //System.out.println(stringBuffArr[i]);
         }
 
+//–ø—Ä–æ—Å—Ç–∞–≤–ª–µ—è–º –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –¥–µ—Ñ–µ–∫—Ç–æ–≤ –Ω–∞–ø—Ä–æ—Ç–∏–≤ –∫–∞–∂–¥—ã–π —Å—Ç—Ä–æ–∫–∏
+        String[]copyOfStringBuffArr = stringBuffArr.clone();
+        String defectCount = "";
+        int colonCount;
 
-//for (String i: stringBuffArr) { System.out.println(i); }
+        for (int i = 0; i < stringBuffArr.length; i++) {
 
+            if (stringBuffArr[i].contains(":") && (stringBuffArr[i].contains("CRM-")==false) ) {
 
-for (int i = 0; i < arrDoubles.length; i++) {
+                colonCount = stringBuffArr[i].indexOf(":");
+                defectCount = stringBuffArr[i].substring(colonCount);
 
-      for (int j = 0; j < stringBuffArr.length; j++) {
+            } else if (stringBuffArr[i].length() != 0){
+                stringBuffArr[i] +=defectCount;
+            }
+            //System.out.println(stringBuffArr[i]);
+        }
 
-
-          if (arrDoubles[i].equals(stringBuffArr[j]) ) {
-
-              System.out.println(j + " " + arrDoubles[i]);
-
-
-          }
-
-
-      }
-
-}
+        //for (String i: stringBuffArr) { System.out.println(i); }  System.out.println("\n");
+        //for (String i: arrDoubles) { System.out.println(i); } System.out.println("\n");
 
 
 
+//–æ—Ç–±—Ä–∞–∂–∞–µ–º —Å—Ç—Ä–æ–∫–∏, –≤ –∫–æ—Ç–æ—Ä—ã—Ö —Å–æ–¥–µ—Ä–∂–∞—Ç—å—Å—è –¥—É–±–ª–∏ + —ç–ª–µ–º–µ–Ω—Ç –º–∞—Å—Å–∏–≤–∞ + –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ç–∏–∫–µ—Ç–æ–≤ —Ä–∞–∑—Ä–∞–±–∞, –¥—É–±–ª–∏ –∫–æ—Ç–æ—Ä–æ–≥–æ –∏ –æ—Ç–æ–±—Ä–∞–∂–∞–µ—Ç —Å—Ç—Ä–æ–∫–∞
+        String antiDoubles = "";
+
+        for (int i = 0; i < arrDoubles.length; i++) {
+
+            for (int j = 0; j < copyOfStringBuffArr.length; j++) {
+
+                if (arrDoubles[i].equals(copyOfStringBuffArr[j]) ) {
+
+                    antiDoubles += j + "; " + arrDoubles[i] + " " + stringBuffArr[j].substring(stringBuffArr[j].indexOf(":")) + "\n";
+
+                }
+
+            }
+
+            antiDoubles += "PART_" + i + "\n";
+            //System.out.println(antiDoubles);
+
+        }
+
+//–µ—Å–ª–∏ –Ω—É–∂–Ω–æ –ø–æ–ª—É—á–∏—Ç—å –ª–æ–≥ —Ä–∞–∑–±–æ—Ä–∞ - —Ä–∞—Å–∫–æ–º–µ–Ω—Ç–∏—Ç—å
+        //System.out.println(antiDoubles);
+
+//–æ–±—Ä–∞–±–∞—Ç—ã–≤–∞–µ–º —Å—Ç—Ä–æ–∫—É —Å –¥–µ—Ñ–µ–∫—Ç–∞–º–∏ - –≤—ã–ø–∏—Å—ã–≤–∞–µ–º —ç–ª–µ–º–µ–Ω—Ç—ã –º–∞—Å—Å–∏–≤–∞ –¥–ª—è –∫–æ—Ç–æ—ã—Ö –¥—É–±–ª–∏ –Ω–µ —É–¥–∞–ª—è—Ç—å
+        int minIndex;
+        int separatorIndex;
+        String buffAntiDoubler;
+
+        for (int i = 0; i < arrDoubles.length; i++) {
+
+            separatorIndex = ("PART_" + i).length();
+            buffAntiDoubler = antiDoubles.substring(0,antiDoubles.indexOf("PART_" + i));
+            antiDoubles = antiDoubles.substring(antiDoubles.indexOf("PART_" + i) + separatorIndex + 1);
+            minIndex = 0;
+
+            String[]antiDoubleArr = buffAntiDoubler.split("\n");
+
+            for (int j = 1; j < antiDoubleArr.length; j++) {
+
+                if (Integer.parseInt(antiDoubleArr[j].substring(antiDoubleArr[j].indexOf(":") + 1)) < Integer.parseInt(antiDoubleArr[minIndex].substring(antiDoubleArr[minIndex].indexOf(":") + 1))) {
+                    minIndex = j;
+                }
+
+            }
+            //System.out.println(antiDoubleArr[minIndex]);
+            rowForDoubles+=antiDoubleArr[minIndex].substring(0,antiDoubleArr[minIndex].indexOf(";")) + "\n";
+
+        }
+
+        //System.out.println("\n"+rowForDoubles);
 
 
 
     } //end of method
+
 
 } //end of class
